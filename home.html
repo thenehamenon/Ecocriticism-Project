@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body {
+  font-family: "Lato", sans-serif;
+
+}
+
+.tabcontent {
+  display: none;
+  margin-left: 200px;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover, .tablinks:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  /* background-color: rgb(37, 193, 177); */
+  color: white;
+}
+
+.inactive{
+  color: #818181;
+}
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.tablinks {
+  /* width: 100%;
+  padding:5px;
+  backgroun */
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  /* color: #818181; */
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.couplet{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 400;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 12px;}
+}
+</style>
+</head>
+<body>
+<img src="images/home_page.jpg" alt="ramayana mural" width="1500" height="425" class="banner">
+<div style="margin-left: 220px;">
+  <h1>The Quest for Sanjeevani Booti</h1>
+  <p>By:</p>
+  <p>Prabhleen Kaur (2022A8PS0596G)</p>
+  <p>Vikhyat Gupta (2022A8PS0327G)</p>
+  <p>Neha Sanjeev Menon (2022A8PS0177G)</p>
+  <p>Amartya Kumar (2022B5A71436G)</p>
+  <p>Dhruv (2022A1PS1515G)</p>
+</div>
+
+<div class="sidenav">
+   <button class="tablinks inactive" onclick="openMenu(event, 'intro')">Introduction</button>
+   <button class="dropdown-btn tablinks inactive">History
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">  
+    <button style="padding: 5px; padding-top: 10px;  font-size: 17px" class="tablinks inactive" onclick="openMenu(event, 'ramayana')">Ramayana</button>
+    <hr style="border: none; height: 0.5px; background-color: #818181;">
+    <button style="padding: 5px; padding-bottom: 10px;  font-size: 17px" class="tablinks inactive" onclick="openMenu(event, 'mahabharata')">Mahabharata</button>
+  </div>
+   <button class="tablinks inactive" onclick="openMenu(event, 'contro')">Controversies</button>
+   <button class="tablinks inactive" onclick="openMenu(event, 'search')">The Search</button>
+   <button class="dropdown-btn tablinks inactive" onclick="openMenu(event, 'criteria')">The Criteria
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-container">  
+    <button style="padding: 5px;   font-size: 17px" class="tablinks inactive" onclick="openMenu(event, 'Sanjeevani')">Sanjeevani in different Languages</button>
+    <hr style="border: none; height: 0.5px; background-color: #818181;">
+    <button style="padding: 5px;   font-size: 17px" class="tablinks inactive" onclick="openMenu(event, 'medical')">Medicinal Properties</button>
+    <hr style="border: none; height: 0.5px; background-color: #818181;">
+    <button style="padding: 5px;   font-size: 17px" class="tablinks inactive" onclick="openMenu(event, 'healing')">Healing Properties</button>
+  </div>
+   
+  
+</div>
+
+<div id="intro" class="tabcontent" style="margin-left: 220px;">
+  <h2>Introduction</h2>
+  <div class="intro-img" style="display: flex; justify-content: center;">
+    <img src="images/intro.png" style="width: 500px; height: 270px;">
+  </div> 
+  <p>This website explores the biodiversity of India through the lens of the mythical quest for
+Sanjeevani Booti. Through literary analysis, history, anthropology, and scientific
+research, it aims to uncover indigenous knowledge and advocate for interdisciplinary
+approaches to biodiversity conservation.
+</p>
+<div class="intro-shloka" style="display: flex; justify-content: center;">
+  <strong>
+    <p>
+      वैदेही हरणं जातं जटायु मरणं  महत्।                                                         
+    </p>
+    <p>
+      एतद्विद्याति लोकं जीवनं सम्पद्यते च यः॥
+    </p>
+    </strong>
+</div>
+
+<p>
+  This verse from the Ramayana encapsulates the central themes of struggle, healing, and the pursuit of life-saving remedies. The verse signifies that one who understands the abduction of Sita and the death of Jatayu truly comprehends life and achieves prosperity. It serves as a reminder of the challenges we face, the sacrifices made, and the eternal quest for restoration and rejuvenation, echoing the essence of the quest for the Sanjeevani Booti.
+</p>
+<p>
+  As we embark on this expedition, guided by the principles of ecocritical inquiry, we invite you to join us in exploring the multifaceted layers of meaning embedded within the legend of the Sanjeevani Booti. Together, let us unravel the intricate tapestry of ecological narratives that converge at the intersection of myth and reality, forging a deeper understanding of our place within the intricate web of life.
+</p>
+
+
+</div>
+
+<div id="search" class="tabcontent" style="margin-left: 220px;">
+  <h2>The Search</h2>
+  <p>
+    SANJEEVANI is one of the most enigmatic and highly coveted herbs in Indian mythology, shrouded in deep controversy regarding its existence and true identity. Its legendary power lies in its supposed ability to revive life, yet pinpointing a specific plant species that could be considered Sanjeevani has proven exceedingly challenging. Despite its elusive nature, the herb has been a topic of intense scrutiny for centuries. Recently, there has been a revived enthusiasm for uncovering its true identity, driven by the growing recognition of the untapped value of biological resources within any nation. The government of Uttarakhand in 2016 had chalked out the plan to search for the mythical herb in the  Dronagiri mountains of Chamoli district.
+  </p>
+  <p>
+    Whether or not Sanjeevani exists needs to be examined irrespective of whether or not the Ramayana is a fact of history or a figment of imagination. For several reasons: first, Sanjeevani as a concept is deeply rooted in traditional Indian medicine. Secondly, as a herb that can resurrect life, Sanjeevani is not only limited to Ramayana but also figures in other mythological stories such as the story of ‘Yayathi’ and thus seems to have a broad cultural base. Thirdly, given its high potential value, it is worth probing lest we miss out on a potentially important biological resource and also about preserving it.
+  </p>
+  <p>
+     K. N. Ganeshaiah, R. Vasudeva and R. Uma Shaanker in their paper ‘In search of Sanjeevani’  has proposed that the process of evaluating the existence of Sanjeevani shall follow a logical process of elimination of the following alternate possibilities.
+  </p>
+  <p>
+    1. It refers to a specific plant, either extinct or extant, with a strong potential for resurrecting life.
+  </p>
+  <p>
+    2. It is merely a conceptual term referring to a specific group of plants with a potential for invigorating the dying health.
+  </p>
+  <p>
+     3. It is a metaphoric term for any plant(s) with a good medicinal value.
+  </p>
+  <p>
+    4. It is simply an imaginary plant that never existed. 
+  </p>
+  <p>
+    The conclusion that Sanjeevani is a mere imaginary plant can only be made after the first three possibilities are objectively disproved.
+  </p>
+  <p>
+    “The spirit of science shall be to capture these possibilities, however meagre they could be, than to wrongly assume that all things unknown to science do not stand a chance.” (K.N.Ganeshaiah, 2009)  
+  </p>
+</div>
+
+<div id="criteria" class="tabcontent" style="margin-left: 220px;">
+  <h2>The Criteria</h2>
+  <p>Due to the numerous retellings and translations of the epic Ramayana across different languages and cultures, it's natural that there exist multiple versions with varying details, including those concerning Sanjeevani. However, despite these variations, certain fundamental elements remain consistent across most versions. During the war, Lakshmana, Rama’s brother, sustained a serious injury from an arrow, rendering him unconscious-a state interpreted as akin to death. Reviving him required a specific herb called Sanjeevani (literally meaning something that offers life; jeeva = life) which was believed to be available in India. Consequently, Hanuman was tasked with retrieving this herb and flew to a mountain range, sometimes referred to as Sanjeevani Parvatha. However, he couldn't pinpoint the exact plant and instead gathered a large assortment of all plants resembling the intended herb, which he then brought back to Lanka.</p>
+  <p>
+    Based on the details provided in the epic, we can establish several criteria for identifying the candidate herb:
+  </p>
+  <p>
+    1. The plant must have been referred to in different languages in India with terms similar to/close to Sanjeevani.
+  </p>
+  <p>
+    2. The plant must have a Mountainous Habitat.
+  </p>
+  <p>
+    3. It should be a medicinal plant.
+  </p>
+  <p>
+    4. The plant must have medicinal properties associated with healing or reviving.
+  </p>
+  <p>
+    This criteria begins by considering a wide range of plants that meet basic criteria, then gradually narrows down the selection through increasingly stringent filters, ultimately leading to the identification of the most promising candidates.
+  </p>
+</div>
+
+<div id="Sanjeevani" class="tabcontent" style="margin-left: 220px;">
+  <h2>Sanjeevani in Different Languages</h2>
+  <p>
+    The description of the mythical herb "Sanjeevani" in ancient puranic texts is not detailed enough to facilitate its scientific identification and study. As a result, the existence of the herb lacks scientific proof and remains mysterious. Over the centuries, herbalists and researchers have engaged in serious discussions and futile searches for this herb. Several plants in different languages and dialects of India (Natesh 2006; Uma Shaanker et al. 2006; Ganeshaiah et al. 2009) share the colloquial name "Sanjeevani" and are claimed to possess its legendary properties.
+  </p>
+  <p>
+    Jeeva Sampada (meaning wealth of bioresources), a database on Indian bioresources comprising of 8,200,00 records for over 39,000 species containing a library of the common names of most Indian plants, in about 80 different languages and dialects, was used to search term ‘Sanjeevani’ and its synonyms (words with similar meaning) or phononyms (words sounding phonetically similar) in Sanskrit in particular and in other languages as well.
+  </p>
+  <p>
+    A preliminary list of about 17 species was arrived at after searching the database. However, there is no consensus on a single plant species, and the search for the true Sanjeevani continues. Among the plants associated with the name "Sanjeevani," such as Cressa cretica L., Selaginella bryopteris (L.) Bak., Desmotricum fimbriatum Bl., Malaxis acuminata D. Don, Malaxis wallichii (Lindl.) Deb., Microstylis wallichii Lindl., Trichopus zeylanicus Gaertn., and Terminalia chebula Retz., many researchers consider S. bryopteris as the most likely candidate (Pandey et al. 1999; Sah et al. 2005; Mishra 2011; Singh and Singh 2015; Paswan et al. 2017; Gautam et al. 2023).
+  </p>
+  <table style="border: 1px solid black;">
+    <tr>
+      <th>Scientific Name</th>
+      <th>Family</th>
+      <th>Common name (in Sanskrit)</th>
+    </tr>
+    <tr>
+      <td>
+        Desmotricum fimbriatum Bl
+      </td>
+      <td>
+        Orchidaceae
+      </td>
+      <td>
+        Jeevaka (जीवक), Jeeva (जीव), Jeevabhadra (जीवभद्र), Jeevavani (जीववाणी), Jeevanthi (जीवनति), Jeevapathra (जीवपत्र), Jeeva pushpa (जीव पुष्प), Jeevavardhini (जीवविधिनी), Jeevadhaathri (जीवधात्री), Jeevya (जिव्या), Rakthaanthi (रकतानति), Yashasya, Sukhankaari (सुखांकारी), Praanadha (प्राणधा)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Malaxis acuminata D. Don
+      </td>
+      <td>
+        Orchidaceae
+      </td>
+      <td>
+        Jeevaka (जीवक)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Malaxis wallichii (Lindl.) Deb
+      </td>
+      <td>
+        Orchidaceae
+      </td>
+      <td>
+        Jeevaka (जीवक)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Microstylis wallichii Lindl
+      </td>
+      <td>
+        Orchidaceae
+      </td>
+      <td>
+        Jeevaka (जीवक) , Rishvan
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dregea volubilis (L.f.) Benth. ex Hook.f. 
+      </td>
+      <td>
+        Asclepiadaceae
+      </td>
+      <td>
+        Jeevanthi (जीवनति)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Holostemma rheedei Wall.
+      </td>
+      <td>
+        Asclepiadaceae
+      </td>
+      <td>
+        Jeevanthi (जीवनति)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Leptadenia reticulata (Retz.) Wight & Arn.
+      </td>
+      <td>
+        Asclepiadaceae
+      </td>
+      <td>
+        Jeevanthi (जीवनति)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Cimicifuga foetida L.
+      </td>
+      <td>
+        Ranunculaceae
+      </td>
+      <td>
+        Jeevanthi (जीवनति)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Cressa cretica L
+      </td>
+      <td>
+        Convolvulaceae
+      </td>
+      <td>
+        Sanjeevani(संजीवनी), Amruthashraava (अमृतसरवा), Rudanthi , Madhushraava (मधुसरवा), Romaanchika
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Litsea chinensis B.Heyne ex Nees
+      </td>
+      <td>
+        Lauraceae
+      </td>
+      <td>
+        Jeevani (जीवनी) 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Putranjiva roxburghii Wall.
+      </td>
+      <td>
+        Euphorbeaceae
+      </td>
+      <td>
+        Jeevanpatra (जीवनपत्र)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Selaginella bryopteris (L.) Bak.
+      </td>
+      <td>
+        Selaginellaceae
+      </td>
+      <td>
+        Sanjeevani (संजीवनी), Sanjeevani Bhoothi (संजीवनी भूित)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Tinospora cordifolia (Thunb.) Miers
+      </td>
+      <td>
+        Menispermaceae
+      </td>
+      <td>
+        Jeevanthica 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Terminalia chebula Retz
+      </td>
+      <td>
+        Combretaceae
+      </td>
+      <td>
+        Jeevanthi (जीवनति), Jeevanika (जीवािनका), Chethara (चेतर)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Trema orientale (L.) Bl
+      </td>
+      <td>
+        Urticaceae
+      </td>
+      <td>
+        Jeevani (जीवनी)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Trichopus zeylanicus Gaertn.
+      </td>
+      <td>
+        Dioscoreaceae
+      </td>
+      <td>
+        Jeeva (जीव)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Viscum articulatum Burm. f. 
+      </td>
+      <td>
+        Loranthaceae
+      </td>
+      <td>
+        Jeevanthica
+      </td>
+    </tr> 
+  </table>
+  <p>Source: Ganeshaiah et al. (2009)</p>
+  <br>
+  <p>
+    The three species, viz. C. cretica, S. bryopteris and D. fimbriatum were considered as focal species for the next steps of analysis as the term Sanjeevani is frequently and consistently referenced
+  </p>
+  <img src="./images/criteria1.png">
+  <br>
+  <h3>Habitat</h3>
+  
+  <p>
+    In all versions of the epic, Hanuman consistently searched for the plant in mountainous regions. Therefore, if the herb indeed exists, it is likely to be found along mountain ranges. Among the three species selected based on their references in Indian languages, C. cretica may not be a viable candidate as it predominantly occurs in dry tracts, particularly the Deccan Plateau, rather than along mountain ranges. Hence, S. bryopteris and D. fimbriatum emerge as the more plausible candidates.
+  </p>
+  <div class="criteria-images" style="display: flex; justify-content: center; margin-bottom: 10px;">
+    <img src="images/flower1.png" style="display: inline-block; height: 300px; width: 200px; margin-right: 140px">
+    <img src="images/plant1.png" style="display: inline-block; height: 300px; width: 350px">
+  </div>
+  <span style="margin-left: 330px">D. fimbriatum</span>
+  <span style="margin-left: 315px">s. bryopteris</span>
+</div>
+
+<div id="medical" class="tabcontent" style="margin-left: 220px;">
+  <h2>
+    Medical Properties
+  </h2>
+  <p>
+    From the epic of Ramayana, it can be said that the plant known as Sanjeevani in various languages in India grows at high altitudes and is renowned for its extraordinary medicinal properties. It is revered for its potent ability to revive or rejuvenate life. Sanjeevani is said to emit light, exhibiting bioluminescence. The plant's fragrant aroma is believed to be associated with the presence of bioflavonoids.
+  </p>
+  <h3>
+    D. fimbriatum
+  </h3>
+  <p>
+    Traditional uses of Dendrobium plants for treating dermatological disorders in different countries:
+  </p>
+  <br>
+
+  <table>
+    <tr>
+      <th>Latin Name</th>
+      <th>Country</th>
+      <th>Local name</th>
+      <th>Tradtional Use</th>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium affine Steudel.
+      </td>
+      <td>
+        Australia
+      </td>
+      <td>
+        Marndaja, tjalamarinj
+      </td>
+      <td>
+        The sap from the pseudobulbs is directly squeezed onto sores to relieve itchy skin
+        Fluid from the stem or bulb is used on skin to treat itching, cuts, sores and minor burns
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium alpestre Royle
+      </td>
+      <td>
+        India
+      </td>
+      <td>
+        Jiwanti
+      </td>
+      <td>
+        For treating pimples, boils and other skin eruptions
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium amoenum Wall. ex Lindl
+      </td>
+      <td>
+        India, Nepal
+      </td>
+      <td>
+        Mitha alu,
+        Thuur
+      </td>
+      <td>
+        Leaves of D. amoenum pounded with Hedychium wardii C.E.C. Fisch. rhizomes are made into a paste, which is used to treat wounds and various skin diseases
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium aphyllum (Roxb.) C.E.C. Fisch
+      </td>
+      <td>
+        Bangladesh, China
+      </td>
+      <td>
+        Dou chun shi hu
+      </td>
+      <td>
+        A paste or juice of the leaves is used to treat wounds
+        Whole plants are used to treat burns and scalds. Fresh stems are externally used to tread burns and scalds
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium denneanum Kerr [syn. Dendrobium aurantiacum var. denneanum (Kerr) Z.H.Tsi]
+      </td>
+      <td>
+        China
+      </td>
+      <td>
+        Die qiao shi hu
+      </td>
+      <td>
+        Stems are used to treat impetigo. Dry leaves are externally used to treat impetigo
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium canaliculatum R. Br
+      </td>
+      <td>
+        Australia
+      </td>
+      <td>
+        Marndaja
+      </td>
+      <td>
+        Pseudobulbs are squeezed, and the sap is applied directly to sores to help heal them
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium chrysanthum Wall. ex Lindl
+      </td>
+      <td>
+        India
+      </td>
+      <td>
+        Nauawimu
+      </td>
+      <td>
+        Stem juice is applied on wounds and sores
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium discolor Lindl
+      </td>
+      <td>
+        Australia
+      </td>
+      <td>
+      </td>
+      <td>
+        A poultice is prepared from young canes to draw a boil. A liniment made from mature canes is used to treat ringworm
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium fimbriatum Hook
+      </td>
+      <td>
+        India
+      </td>
+      <td>
+        Mokya tu
+      </td>
+      <td>
+        Approximately 10 g of leaves are ground, made into a paste and applied twice a day for 10 days to heal cuts and wounds
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium hancockii Rolfe
+      </td>
+      <td>
+        China
+      </td>
+      <td>
+        Xi ye shi hu
+      </td>
+      <td>
+        Ulcers
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium herbaceum Lindl
+      </td>
+      <td>
+       India 
+      </td>
+      <td>
+        Agai
+      </td>
+      <td>
+        Fresh roots are burnt, and 10 g of the resultant ash is mixed with 10 ml mustard oil and applied on affected skin 2 to 3 times daily for several days until symptoms disappear
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium macraei Lindl. [syn. Flickingeria macraei (Lindl.) Seidenf.]
+      </td>
+      <td>
+        India
+      </td>
+      <td>
+        Sakar
+      </td>
+      <td>
+        One spoonful of a root paste along with 1 g of a seed powder of black pepper is administered orally on an empty stomach twice a day for 21 days to cure diseases, including skin allergies, and is applied on the affected part of skin to cure eczema
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dendrobium nobile Lindl
+      </td>
+      <td>
+        Bangladesh, India
+      </td>
+      <td>
+       
+      </td>
+      <td>
+        A leaf extract is made and is very effective for treating freshly cut wounds. A seed powder is used to cure cuts and wounds.
+
+        Powdery seeds are applied to fresh wounds for quick healing.
+
+        Whole plant parts are used in the treatment of cuts and wounds.
+
+      </td>
+    </tr>
+  </table>
+  <p>
+    Wang YH. Traditional Uses and Pharmacologically Active Constituents of Dendrobium Plants for Dermatological Disorders: A Review.
+  </p>
+  <br>
+  <h3>
+    s. Bryopteris
+  </h3>
+  <p>
+    With a common name as spike moss, Selaginella bryopteris is a perennial herbaceous poikilohydric lithophyte that grows on the hills of tropical areas, particularly the Arawali mountain terrains from east to west in India. It is commonly sold in pilgrimage destinations of various regions of India. During summer the plants undergo extreme desiccation. The fronds curl, become dry and are virtually dead. In this condition, they look like a closed fist hence often known in Unani as ‘punjemariam’ or ‘hathazori’. The dry plants when left in water unfold their fronds, turn green and come back to active life. it is found in Uttaranchal, Uttar Pradesh, Madhya Pradesh, Chhattisgarh, Bihar, Odisha, Maharashtra, Tamil Nadu (Saxena and Brahmam 1996). 
+  </p>
+  <h6 style="font-size: 15px;">Medicinal Uses:</h6>
+  <ul>
+    <li>
+      S. bryopteris has been traditionally used for various medicinal purposes, including alleviating discomfort associated with hot waves and burning sensation during urination, restoring normal menstrual cycles and aiding in easy delivery when applied externally to pregnant women and providing treatment for jaundice (Shah et al. 2005).
+    </li>
+    <li>
+      It is also useful for the treatment of liver and epilepsy-related conditions, diabetes inflammation and wound healing (Shankar and Devalla 2012; Gautam et al. 2023). 
+    </li>
+    <li>
+      The herb is a key ingredient to treat various conditions such as spermatorrhoea, gonorrhea, venereal diseases, constipation, colitis, and indigestion (Kholia and Punetha 2005; Singh and Singh 2012; Singh et al. 2013).
+    </li>
+    <li>
+       In Madhya Pradesh, the herb is traditionally used by Gond tribes as a strength tonic. They prepare a fresh paste of young leaves and combine it with sugar or honey to treat stomach aches and urinary tract inflammation in children (Singh et al. 2007).
+    </li>
+    <li>
+       In Chhattisgarh's Bastar district, women utilize the dried powder of this herb to address gynecological issues like menstrual irregularities, leucorrhoea, and childbirth discomfort (Singh and Singh 2014).
+    </li>
+    <li>
+       In Songhati and Sonbhadra regions of Uttar Pradesh, the native population consumes a paste made from the herb along with cow's milk for treating beri-beri, dysentery, and rejuvenation (Singh et al. 2002).
+    </li>
+    <li>
+      Some tribal communities use the herb in combination with tobacco for hallucinogenic purposes (Dixit 1984; Singh et al. 1989).
+    </li>
+    <li>
+       According to Sah et al. (2005), extracts of S. bryopteris have been found to aid in the recovery of rat and insect cells exposed to UV radiation and oxidative stress caused by H2O2. This suggests potential implications for preventing neurodegeneration since oxidative stress has been associated with neural disorders (Pandey et al. 1999; Kasera et al. 2003; Nedeljkovic et al. 2003; Stocker and Keaney 2004). Although the herb shows promise in cell recovery, there is currently no evidence supporting its potential to revive patients from a coma or unconscious state. 
+    </li>
+    <li>
+      S. bryopteris is commonly used to treat heat strokes, providing relief for individuals working in high temperatures, especially in tropical regions during the summer (Sah 2008).
+    </li>
+    <li>
+       Epidemiological studies indicate that including a diverse range of flavonoids in one's diet can reduce the risk of developing Parkinson's disease, particularly in males. Additionally, research suggests that incorporating flavonoids into one's cuisine may contribute to a lower incidence of cancer and cardiovascular disease (Gao et al. 2003; Chandran 2014).
+    </li>
+    <li>
+      S. bryopteris has shown anticarcinogenic effects against lung and skin papilloma and also reveals anti-inflammatory properties for treating skin disorders (Mishra et al. 2011; Paswan et al. 2017).
+    </li>
+    <li>
+      Recently, Pal et al. (2022) stated that S. bryopteris extract (SBE) induces apoptosis in liver cancer cells (HepG2) by affecting mitochondrial membrane potential, nuclear condensation, and reactive oxygen species production. 
+    </li>
+    <li>
+      The efficacy of SBE (S. bryopteris extract) against Hepatocellular carcinoma (HCC) is substantiated by the increased expression of pro-apoptotic genes (p53, caspase-3, caspase-9, Bax) and decreased expression of the anti-apoptotic gene (Bcl-2) in liver tissue, as revealed through qRT-PCR analysis (Pal et al. 2022). 
+    </li>
+    <li>
+      Singh et al. (2017) stated that S. bryopteris water extract, when added to the freezing medium along with Me2SO, significantly increased the levels of Hsp70 and Hsp90 in cryopreserved MSCs compared to non-cryopreserved MSCs. This suggests that the extract enhances the stability and function of cryopreserved Human Umbilical Cord Blood-derived MSCs (Mesenchymal stem cells).
+    </li>
+
+  </ul>
+</div>
+
+<div id="healing" class="tabcontent" style="margin-left: 220px;">
+  <h2>Medicinal Properties Associated with Healing or Reviving</h2>
+  <p>The traditional narrative depicts Sanjeevani as having "resurrected" Lakshmana from a state akin to death. However, this interpretation of the herb's ability to revive life from death itself can be understood in various ways. It is unlikely that there was any herb potentially capable of resurrecting a dead Lakshmana, back to life. It's more plausible to consider that Lakshmana was in a state resembling death but not actually deceased. This interpretation suggests that Sanjeevani may have had the ability to restore consciousness or vitality rather than literal resurrection from death.
+  </p>
+  <p>
+    One such state can be ‘Coma’. A coma is a prolonged state of unconsciousness. During a coma, a person is unresponsive to their environment. There are a number of cases where patients in coma, caused by severe injury or illness, revert to the conscious stage, as if the dead system switched back to life. A famous example is that of Sarah Scantin, who entered into a coma in 1984 following an accident when she was 18 years old and remained in that state for about 20 years. She suddenly came back to ‘life’ in 2005.
+  </p>
+  <p>
+    What causes coma is less understood, barring some physiological processes associated with it. However, it is believed that certain poisons or shocks can induce similar effects. Traditionally people bitten by poisonous snakes or scorpions are not allowed to go to sleep, lest they do not slip into such an unconscious stage that eventually leads to death. 
+  </p>
+  <p>
+    It is probable that Lakshmana was in a state of unconsciousness or coma due to the effects of the arrow, such as heat shock or poison. In this context, Sanjeevani may have possessed properties capable of awakening or rejuvenating him, effectively "resurrecting" him from this state. The similarity between the symptoms of this coma-like state and actual death likely led storytellers to describe the herb as a "life-giver."
+  </p>
+  <p>
+    K. N. Ganeshaiah, R. Vasudeva and R. Uma Shaanker used the ‘doctrine of signature’, popularly known as the tenet ‘similar cures similar’ to select between the two candidates.
+  </p>
+  <p>
+    One of the strong tenets of the ancient Indian and other traditional systems of medicine was the principle of ‘similar cures similar’. Similar to the ‘Doctrine of Signature’, it essentially means that a plant with syndromes similar to the afflicted organ or disorder in question, can be effectively used to cure the disease in human patients. Therefore, they hypothesized that the so-called Sanjeevani had the ability of resurrecting itself from a state of near-death situation and hence the ancient doctors, on the principle of ‘similar cures similar’ used it to cure coma in Rama, Lakshmana and others.
+  </p>
+  <p>
+    Interestingly, there is a group of poikilohydric plants that exhibit remarkable resilience by seemingly coming back to life from nearly dead-dry conditions upon rehydration. These plants have garnered significant interest as potential sources of genes conferring drought tolerance and are the focus of intense study by crop physiologists, ecologists, and biochemists. This ability to revive from extreme dehydration parallels the concept of resurrection attributed to Sanjeevani in mythology, highlighting a potential scientific basis for such legendary properties.
+  </p>
+  <p>
+    S. bryopteris is a poikilohydric plant, and thus appears to possess the traits prescribed by the criteria we have set for searching Sanjeevani. It is a mountainous plant, referred to as Sanjeevani in Sanskrit and other local languages, has several medicinal values and exhibits an ability to resurrect itself from a stage of death, though its ability to cure coma is not recorded.  Several of the medical properties such as the potential to promote recovery from shocks. Shah et al do point in the direction of the plant able to prevent neuro-degeneration.
+  </p>
+  <p>
+    Indeed, based on the criteria established for the search, it seems that there are at least two potential species—S. bryopteris and D. fimbriatum—that could represent Sanjeevani. These species merit further investigation and research to ascertain their potential as the mythical herb described in the epic narratives. By conducting more extensive studies on these species, we may gain valuable insights into their medicinal properties and their potential to fulfil the legendary attributes associated with Sanjeevani.
+  </p>
+  <p style="font-size: small;">
+    Wang, H. (2021). Traditional Uses and Pharmacologically Active Constituents of Dendrobium Plants for Dermatological Disorders: A Review. Natural Products and Bioprospecting, 11(5), 465. https://doi.org/10.1007/s13659-021-00305-0
+  </p>
+</div>
+
+<div id="ramayana" class="tabcontent" style="margin-left: 220px;">
+  <h2>Ramayana</h2>
+  <p>
+    In Hindu Mythology, Sanjeevani booti is a herb that is said to have reviving powers, this its name sanjeevani – meaning to give life/immortality, booti – meaning herb.
+  </p>
+  <p>
+    This mythical herb is first mentioned in Ramayana where Ravana’s son Indrajit hurls a weapon at Lakshmana and he is fatally wounded. To save Lakshmana , Hanuman is tasked to fetch the herb from the described mountain. When he reaches the described mountain he comes to find 4 similar herbs ; confused by this he cided to bring the whole mountain back with him.
+  </p>
+  <p>
+    Sarga 74 that states the location as well as the qualities of the sanjeevani booti
+  </p>
+  <div class="r-images" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+    <img src="images/r1.png" style="width: 50%; height: 650px">
+    <img src="images/r2.png" style="width: 50%; height: 650px">
+    <img src="images/r3.png" style="width: 50%; height: 650px">
+    <img src="images/r4.png" style="width: 50%; height: 650px">
+    <img src="images/r5.png" style="width: 50%; height: 330px">
+  </div>
+  
+
+  <p>
+    Sanjeevani booti is mentioned in the legend of Ramayana in the sarga 74 of yuddha kanda.
+  </p>
+
+  <h4>Given below is the translation from Shlok 29-34</h4>
+  <div class="couplet">
+    <strong>
+      <p>
+    गत्वा परममध्वानमुपर्युपरि सागरम् |</p>
+    <p>
+हिमवन्तं नगश्रेष्ठं हनूमन्गन्तुमर्हसि || ६-७४-२९
+  </p>
+    </strong>
+    
+  </div>
+  
+  <p>
+    29. hanuumaan = O Hanuma!; arhasi = you ought; gantum = to go; himavantam = to Himalaya; nagashreShTham = the foremost of mountains; gatvaa = by traveling; uparyupari = higher and higher over; paramam = the large; saagaram = ocean.
+  </p>
+  <p>
+    "O Hanuma! You ought to go to Himalaya, the foremost of mountains, by traveling higher and higher over the large ocean."
+  </p>
+  <br>
+  <div class="couplet">
+    <strong>
+      <p>
+    ततः काञ्चनमत्युग्रमृषभं पर्वतोत्तमम् |</p>
+    <p>
+कैलासशिखरं चापि द्रक्ष्यस्यरिनिषूदन || ६-७४-३०
+  </p>
+    </strong>
+    
+  </div>
+  
+  <p>
+    30. ariniShuudana = O annihilator of enemies!; tataH = thereupon; drakShyasi = you will see; tatra = there; R^iShabham = Mount Rishabha; parvatottamam = the excellent mountain; kailaasa shikharam = and the peak of Kailasa; kaaN^chanam = of golden hue; atyugram = and very much powerful.
+  </p>
+  <p>
+    "O annihilator of enemies! Thereafter, you will see there the Mount Rishabha, the excellent mountain and the very much powerful peak of Kailasa, with a golden hue."
+  </p>
+  <br>
+  <div class="couplet">
+    <strong>
+      <p>
+    तयोः शिखरयोर्मध्ये प्रदीप्तमतुलप्रभम् |</p>
+    <p>
+सर्वौषधियुतं वीर द्रक्ष्यस्यौषधिपर्वतम् || ६-७४-३१
+  </p>
+    </strong>
+    
+  </div>
+  
+  <p>
+    31. viira = O valiant Hanuma!; madhye = in the midst; tayoH = of those; shikharayoH = two peaks; drakShyasi = you will see; pradiiptam = a blazing; atulaprabham = and unequally brilliant; oShadhiparvatam = herbal mountain; sarvauShadhiyutam = containing all kinds of herbs.
+  </p>
+  <p>
+    "O valiant Hanuma! In the midst of these two peaks, you will see a blazing and unequally brilliant herbal mountain, containing all kinds of herbs."
+  </p>
+  <br>
+  <div class="couplet">
+    <strong>
+      <p>
+    तस्य वानरशार्दूलचतस्रो मूर्ध्नि सम्भवाः |</p>
+    <p>
+द्रक्ष्यस्योषधयो दीप्ता दीपयन्त्यो दिशो दश || ६-७४-३२
+  </p>
+    </strong>
+    
+  </div>
+  
+  <p>
+    32. vaanara shaarduula = O foremost of monkeys!; sambhavaaH = sprouted; tasya muurdhni = on the head of that mountain; chatusraH = are four; oShadhayaH = herbs; diiptaaH = which are blazing; drakShyasi = you can see; diiptayantiiH = them; illuminating; dashaH = the ten; dishaH = quarters.
+  </p>
+  <p>
+    "O foremost of monkeys! Sprouted on the head of that mountain, are four blazing herbs. You can see them, illuminating the ten quarters."
+  </p>
+  <br>
+  <div class="couplet">
+    <strong>
+      <p>
+    मृतसञ्जीवनीं चैव विशल्यकरणीम् अपि |</p>
+    <p>
+सौवर्णकरणीं चैव सन्धानीं च महौषधीम् || ६-७४-३३
+  </p>
+    </strong>
+    
+  </div>
+  
+  <p>
+    33. mR^ita sanjivaniimchaiva = (you can see) Mrita sanjiivani (capable of restoring the dead to life) and also; vishalyakaraNiim api = Vishalyakarani (capable of extracting weapons and healing all wounds inflicted by weapons); suvarNakaraNiimchaiva = Suvarna karani (restoring the body to its original complexion); samdhaaniimcha = and sandhani (capable of joining severed limbs or fractured bones); mahauShadhim = the great herb.
+  </p>
+  <p>
+    "You can see there, Mrita Sanjivani (capable of restoring the dead to life), Vishalyakarani (capable of extracting weapons and healing all wounds inflicted by weapons), Suvarnakarani (restoring the body to its original complexion) and Sandhani, the great herb (capable of joining severed limbs or fractured bone)."
+  </p>
+  <br>
+  <div class="couplet">
+    <strong>
+      <p>
+    ताः सर्वा हनुमन्गृह्य क्षिप्रमागन्तुमर्हसि |</p>
+    <p>
+आश्वासय हरीन्प्राणैर्योज्य गन्धवहात्मजः || ६-७४-३४
+  </p>
+    </strong>
+    
+  </div>
+  
+  <p>
+    34. hanuman = O Hanuma!; arhasi = you ought; aagantum = to come; kShipram = quickly; gR^ihya = by taking; sarvaaH = all; taaH = of them; gandhavahaatmaja = O son of wind-god!; aashvaasaya = bring succour; hariin = to the monkeys; yojya praaNaiH = by injecting lives into them.
+  </p>
+  <p>
+    "O Hanuma! Bring all those herbs quickly. O son of wind-god! Bring succour to the monkeys, by injecting lives into them."
+  </p>
+  <br>
+  <p style="font-size: small;">
+    Rest of the translation can be read here-
+  </p>
+  <a href="https://www.valmikiramayan.net/utf8/yuddha/sarga74/yuddha_74_frame.htm" style="font-size: small;">
+    https://www.valmikiramayan.net/utf8/yuddha/sarga74/yuddha_74_frame.htm
+  </a>  
+</div>
+
+<div id="mahabharata" class="tabcontent" style="margin-left: 220px;">
+  <h2>Mahabharata</h2>
+  <p>
+    The art of sanjeevani has also been mentioned in the section LXXVI of Sambhava Parva of Mahabharat, “It has the power to revive".
+  </p>
+  <p>
+    "The Asuras also slew on the field of battle many of the celestials. But the open-minded Vrihaspati could not revive them, because he knew not the science called Sanjivani (re-vivification) which Kavya endued with great energy knew so well. And the gods were, therefore, in great sorrow. And the gods, in great anxiety of heart and entertaining a fear of the learned Usanas, then went to Kacha, the eldest son of Vrihaspati, and spoke unto him, saying, 'We pay court to thee, be kind to us and do us a service that we regard as very great. That knowledge which resides in Sukra, that Brahmana of immeasurable prowess, make thy own as soon as thou canst."
+  </p>
+  <p>
+    -prose from section lxxvi of sambhava parva of Mahabharata
+  </p>
+  <br>
+  <p style="font-size: small;">
+    Rest of the Mahabharata can be read here-
+  </p>
+  <a href="https://www.mahabharataonline.com/translation/mahabharata_01077.php" style="font-size: small;">
+    https://www.mahabharataonline.com/translation/mahabharata_01077.php
+  </a>
+</div>
+
+<div id="contro" class="tabcontent" style="margin-left: 220px;">
+  <h2>Controversies</h2>
+  <h3>
+    Why are the locals of this village in Uttarakhand upset with Lord Hanuman?
+  </h3>
+  <p style="margin-bottom: 2px;">
+    For the local residents, the whole of Dronagiri mountain is a deity and they worship the mountain.  The residents of the village have been upset with Hanuman for breaking a part of their deity. This is the reason why most of the locals don’t worship Hanuman. Till a few years ago, if the villagers came to know of anyone worshipping Hanuman, they would immediately banish that person/family from the village!
+  </p>
+  <a href="https://timesofindia.indiatimes.com/travel/destinations/why-are-the-locals-of-this-village-in-uttarakhand-upset-with-lord-hanuman/articleshow/94855269.cms" style="font-size: small; margin-top: 3px;">https://timesofindia.indiatimes.com/travel/destinations/why-are-the-locals-of-this-village-in-uttarakhand-upset-with-lord-hanuman/articleshow/94855269.cms</a>
+  <br><br>
+  <h3>
+    Governments involvement in the search of Sanjeevani Booti
+  </h3>
+  <p style="margin-bottom: 2px;">
+    In 2016 Uttarakhand government granted 25cr rupees to AYUSH (Department of Ayurveda, Yoga and Naturopathy, Unani, Siddha, and Homoeopathy) for research and discovery of the mythical sanjeevani booti but eventually the bjp government decided to cut its funding in 2020.
+  </p>
+  <a href="https://www.hindustantimes.com/india-news/uttarakhand-govt-begins-hunt-for-mythical-herb-sanjeevani-booti/story-8Iy9Xs4bFJHGUlg9yupcLN.html" style="font-size: small; margin-top: 3px;">https://www.hindustantimes.com/india-news/uttarakhand-govt-begins-hunt-for-mythical-herb-sanjeevani-booti/story-8Iy9Xs4bFJHGUlg9yupcLN.html</a>
+  <p style="margin-bottom: 2px;">
+    In 2020 the Uttarakhand forest department claimed to have found a herb similar to sanjeevani booti in dronagiri hills. The team's claim that the plant they found is similar to one discovered earlier on the Dronagiri hills only compounds the skepticism. Such anecdotal accounts and circular reasoning do not constitute valid scientific evidence.
+  </p>
+  <a href="https://www.newindianexpress.com/nation/2020/Feb/04/sanjeevani-booti-found-similar-herb-sent-to-lab-2098924.html" style="font-size: small; margin-top: 3px;">https://www.newindianexpress.com/nation/2020/Feb/04/sanjeevani-booti-found-similar-herb-sent-to-lab-2098924.html</a>
+  <br><br>
+  <h3>
+    Debates about Symbolic vs. Real among people
+  </h3>
+  <p style="margin-bottom: 2px;">
+    It’s essential to recognize that while the Sanjeevani Booti holds symbolic significance in mythology, its existence as a tangible herb lacks concrete scientific evidence.
+    The enchanting tale of Sanjeevani Booti continues to inspire hope and resilience, even as debates persist about its real-world counterpart.
+  </p>
+  <a href="https://culturalindia.org.in/sanjeevani-booti-the-miracle-herb-of-ramayana/" style="font-size: small; margin-top: 3px;">https://culturalindia.org.in/sanjeevani-booti-the-miracle-herb-of-ramayana/
+</a> 
+<br><br>
+<h3>A lot of researchers criticise the varying analysis of Ramayana </h3>
+<p style="margin-bottom: 2px;">
+  The Ramayana, one of the most revered ancient texts, has transcended geographical and cultural boundaries, captivating the hearts and minds of people across South Asia. 'Three hundred Ramayanas,' ignited a controversy by highlighting the myriad languages in which the epic has been written, ranging from Sanskrit to Balinese, reflecting the diverse interpretations it has undergone.
+</p>
+<p>
+  -Sharma, D. P., The Search for Lanka, Print India, New Delhi, 1985. Sharma argues that the Lanka mentioned in the epic is not the present Sri Lanka, but an island along the east coast near the
+Godhavari river delta
+</p>
+<a href="https://www.thehindu.com/sci-tech/science/In-search-of-the-Sanjeevani-plant-of-Ramayana/article16880681.ece" style="font-size: small; margin-top: 3px;">https://www.thehindu.com/sci-tech/science/In-search-of-the-Sanjeevani-plant-of-Ramayana/article16880681.ece</a>
+<p>
+  - Hanuman is the monkey God according to the narration in the epic, but the fact that Rama and his people were continually and actively communicating at ease with him and his relatives and clan members, suggests that this was a metaphoric representation of a native tribe of Deccan India who were perhaps melanic, strongly built and forest-dwelling and hence different from the northern people. 
+</p>
+<p>Ganeshaiah, K. N., ‘KapiLipiSaara’. In Sudha, 2008
+</p>
+<p>
+  - There is no consensus on where he searched for this in India; some versions suggest that he visited the Himalayas; but the fact that he was familiar only with South India, could suggest that he landed
+somewhere along Sahyadri range or its extensions.
+</p>
+<p>
+  - This has been exaggerated to indicate that he carried an entire mountain. It is also true that he brought with him other plants as well, viz. Vishalyakarani, Suvarnakarani and Sandhanakarani.
+While the last of these is mentioned as a group of plants in Charaka Samhita, we do not consider these as candidates for the following reasons:
+</p>
+<ul>
+  <li>they do not seem to have consistency in their mentioning in other literature sources.</li>
+  <li>It was Sanjeevani that was eventually used to cure Lakshmana.</li>
+  <li>There are no phonetic synonyms used consistently for these names in different languages
+       and sources.</li>
+</ul>
+<p>
+  - Similarly the “dead” state of Lakshman could also have been exaggerated and he could have been in a ‘dead equivalent’ state such as a coma and the herb could have brought him out of coma.
+</p>
+<p>
+  - Researchers also argue that there was a time when even the Buddha was considered a nonhistorical figure by the Western Academicians. Human societies retain memories of great events and personalities in the form of colourful legends and folklore. In this sense, Rama and the Ramayana would indeed be a colourful history of a great personality and his life.
+</p>
+
+</div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+// function temp(id){
+//   let a = document.getElementById(id);
+//   //console.log(a);
+//   a.style.display = "block";
+// }
+
+function openMenu(evt, menuName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementsByClassName("banner")[0].style.display = "none";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  console.log(tablinks);
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", " inactive");
+    //tablinks[i].style.color = "#818181";
+    
+  }
+  // Show the current tab, and add an "active" class to the link that opened the tab
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.className = evt.currentTarget.className.replace(" inactive", " active");
+ // evt.currentTarget.style.color = "white";
+}
+
+</script>
+
+</body>
+</html>
