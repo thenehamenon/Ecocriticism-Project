@@ -8,7 +8,7 @@
 
 body {
   font-family: "Lato", sans-serif;
-
+  margin-top: 0;
 }
 
 .tabcontent {
@@ -45,7 +45,7 @@ body {
 }
 
 /* On mouse-over */
-.sidenav a:hover, .dropdown-btn:hover, .tablinks:hover {
+.sidenav a:hover, .dropdown-btn:hover, .tablinks:hover, .homebtn:hover{
   color: #f1f1f1;
 }
 
@@ -109,6 +109,20 @@ table, th, td{
   font-weight: 400;
 }
 
+.homebtn{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  /* color: #818181; */
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -117,18 +131,21 @@ table, th, td{
 </style>
 </head>
 <body>
-<img src="images/home_page.jpg" alt="ramayana mural" width="1500" height="425" class="banner">
-<div style="margin-left: 220px;">
-  <h1>The Quest for Sanjeevani Booti</h1>
-  <p>By:</p>
-  <p>Prabhleen Kaur (2022A8PS0596G)</p>
-  <p>Vikhyat Gupta (2022A8PS0327G)</p>
-  <p>Neha Sanjeev Menon (2022A8PS0177G)</p>
-  <p>Amartya Kumar (2022B5A71436G)</p>
-  <p>Dhruv (2022A1PS1515G)</p>
+
+
+<div class="heyyy" style="margin-top: 0; padding-top: 0;">
+  <img src="images/home_page.jpg" alt="ramayana mural" width="1500" height="425" class="banner" style="margin-top: 0;">
+  <h1 style="margin-left: 220px;">The Quest for Sanjeevani Booti</h1>
+  <p style="margin-left: 220px;">By:</p>
+  <p style="margin-left: 220px;">Prabhleen Kaur (2022A8PS0596G)</p>
+  <p style="margin-left: 220px;">Vikhyat Gupta (2022A8PS0327G)</p>
+  <p style="margin-left: 220px;">Neha Sanjeev Menon (2022A8PS0177G)</p>
+  <p style="margin-left: 220px;">Amartya Kumar (2022B5A71436G)</p>
+  <p style="margin-left: 220px;">Dhruv (2022A1PS1515G)</p>
 </div>
 
 <div class="sidenav">
+  <button class="homebtn active" onclick="temp()">Home</button>
    <button class="tablinks inactive" onclick="openMenu(event, 'intro')">Introduction</button>
    <button class="dropdown-btn tablinks inactive">History
     <i class="fa fa-caret-down"></i>
@@ -1015,17 +1032,35 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-// function temp(id){
-//   let a = document.getElementById(id);
-//   //console.log(a);
-//   a.style.display = "block";
-// }
+function temp(){
+  let a = document.getElementsByClassName('heyyy')[0];
+  //console.log(a);
+  document.getElementsByClassName("homebtn")[0].className = document.getElementsByClassName("homebtn")[0].className.replace(" inactive", " active");
+  a.style.display = "block";
+  tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementsByClassName("banner")[0].style.display = "block";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  console.log(tablinks);
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", " inactive");
+    //tablinks[i].style.color = "#818181";
+    
+  }
+}
 
 function openMenu(evt, menuName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
+  document.getElementsByClassName("heyyy")[0].style.display = "none";
+  document.getElementsByClassName("homebtn")[0].className = document.getElementsByClassName("homebtn")[0].className.replace(" active", " inactive");
   tabcontent = document.getElementsByClassName("tabcontent");
   document.getElementsByClassName("banner")[0].style.display = "none";
   for (i = 0; i < tabcontent.length; i++) {
